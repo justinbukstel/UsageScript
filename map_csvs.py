@@ -5,12 +5,12 @@ input_file_2 = "input2.csv"
 output_file = "output.csv"
 # read the first input file and create a dictionary mapping the "account name" to the "usage score"
 account_to_score = {}
-with open(input_file_1, encoding="utf8") as infile:
+with open(input_file_1, "r") as infile:
     reader = csv.DictReader(infile)
     for row in reader:
         account_to_score[row["account name"]] = row["usage score"]
 # open the second input file and the output file
-with open(input_file_2, encoding="utf8") as infile, open(output_file, "w") as outfile:
+with open(input_file_2, "r") as infile, open(output_file, "w") as outfile:
     # create a CSV writer for the output file
     writer = csv.writer(outfile)
     # write the header row to the output file
